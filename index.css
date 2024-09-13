@@ -66,11 +66,13 @@ button {
     padding: .3rem;
     position: absolute;
     top: 3px;
-    z-index: 1
+    z-index: 1;
+    opacity: 0;
 }
 
 #copiado.active {
-    top: -3rem
+    top: -3rem;
+    opacity: 1;
 }
 
 #error-message {
@@ -87,6 +89,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
 }
 
 .cross {
@@ -102,5 +105,6 @@ button {
 }
 
 #error-message.active {
-    top: -3rem
+    top: -3rem;
+    opacity: 1;
 }
