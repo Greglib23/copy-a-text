@@ -10,7 +10,18 @@
 
 <body>
     <div class="container">
-        <h2 id="textoACopiar"></h2>
+        <div class="texts-container">
+            <h2 id="textoACopiar"></h2>
+            <span id="copiado">Copiado!</span>
+            <div id="error-message">
+                <div class="cross">
+                    X
+                </div>
+                <span id="error">Error</span>
+            </div>
+
+        </div>
+
         <button id="botonCopiar">Toca aqui para copiar el texto</button>
 
         <script>
@@ -20,6 +31,8 @@
 
             // Mostrar el texto en la página
             const textoACopiar = document.getElementById('textoACopiar');
+            const textoCopiado = document.getElementById('copiado');
+            const textoError = document.getElementById('error-message');
             textoACopiar.textContent = texto;
 
             // Evento para copiar el texto al portapapeles
@@ -27,10 +40,23 @@
                 navigator.clipboard.writeText(texto)
                     .then(() => {
                         //alert('Texto copiado al portapapeles');
+                        if (!textoCopiado.classList.contains("active")) {
+                            textoCopiado.classList.toggle('active')
+                            setTimeout(() => {
+                                textoCopiado.classList.toggle('active')
+                            }, 1000)
+                        }
+
 
                     })
                     .catch(err => {
-                        console.error('Error al copiar el texto: ', err);
+                        //console.error('Error al copiar el texto: ', err);
+                        if (!textoError.classList.contains("active")) {
+                            textoError.classList.toggle('active')
+                            setTimeout(() => {
+                                textoError.classList.toggle('active')
+                            }, 1000)
+                        }
                     });
             });
         </script>

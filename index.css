@@ -37,6 +37,7 @@ h2 {
     box-shadow: 10px 10px 25px -12px rgba(0, 0, 0, 0.75);
     color: #ffffff;
     font-size: 2rem;
+    z-index: 100;
 }
 
 button {
@@ -47,4 +48,59 @@ button {
     color: white;
     border-radius: 5px;
     border: none;
+}
+
+.texts-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#copiado {
+    transition: all .3s ease;
+    color: rgb(192, 80, 214);
+    background-color: white;
+    border: 1px solid rgb(192, 80, 214);
+    border-radius: 100px;
+    padding: .3rem;
+    position: absolute;
+    top: 3px;
+    z-index: 1
+}
+
+#copiado.active {
+    top: -3rem
+}
+
+#error-message {
+    position: absolute;
+    transition: all .3s ease;
+    color: rgb(255, 67, 67);
+    background-color: white;
+    border: 1px solid rgb(255, 67, 67);
+    border-radius: 100px;
+    padding: .3rem;
+    position: absolute;
+    top: 3px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cross {
+    padding: .3rem;
+    border: solid 1px rgb(255, 67, 67);
+    border-radius: 100px;
+    margin-right: .3rem;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#error-message.active {
+    top: -3rem
 }
